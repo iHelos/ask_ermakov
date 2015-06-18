@@ -38,12 +38,13 @@
                 <li class="divider-vertical"></li>
                 <li class="divider-vertical"></li>
                 <li>
+                    {% if user.is_authenticated %}
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <div id="avatar">
                                 <img class="media-object" src="default.jpg">
                             </div>
-                            USERID
+                            {{user.username}}
                             <span id="caret-white" class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -62,13 +63,20 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">
+                                <a href="/logout">
                                     <i class="icon-off"></i>
                                     Выйти
                                 </a>
                             </li>
                         </ul>
                     </div>
+                    {% else %}
+                    <div class="btn-group">
+                        <a class="btn btn-inverse" href="/login">
+                            Войти
+                        </a>
+                    </div>
+                    {% endif %}
                 </li>
             </ul>
         </div>
