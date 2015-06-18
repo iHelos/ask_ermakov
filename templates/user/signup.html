@@ -1,0 +1,54 @@
+{% extends "Layout.html" %}
+{% block main %}
+<h2>Registration</h2>	
+<br>
+
+<form method="post" action="/signup" class="form-horizontal" enctype="multipart/form-data">
+	{% csrf_token %}
+	{% for field in form %}
+	<div class="row">
+		<div class="span5">
+			<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+		</div>
+		<div class="span4">
+			<input id="{{ field.id_for_label }}" name="{{ field.name }}"
+			{% if field.name == "password1" or field.name == "password2" %}
+				type="password"
+			{% else %}
+				type="text"
+			{% endif %}
+			value="{{ field.value|default_if_none:"" }}"/>			
+		</div>
+	</div>
+	<br>
+
+	{% if field.errors %}
+		<div class="row">
+			<div class="span12 alert alert-error">
+				{{field.errors}}
+			</div>
+		</div>		
+	{% endif %}
+
+	{% endfor %}
+		
+	<div class="row">
+		<div class="span5">
+			<p>Upload avatar</p>
+		</div>
+		<div class="span2">
+			
+			<div> {{profile_form.avatar}} </div>
+		</div>
+	</div>
+
+
+	<br>
+	<div class="row">
+		<div class="span5 offset2">
+			<input type="hidden" name="next" value="{{ next }}"/>
+			<button type="submit" class="btn btn-info">Register!</button>
+		</div>
+	</div>
+</form>
+{% endblock %}

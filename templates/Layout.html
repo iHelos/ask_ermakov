@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Ask_Ermakov</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <script src="jquery-2.1.3.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">Ask_Ermakov</a>
+            <ul class="nav">
+                <li class="active">
+                    <a href="{% url 'index' %}">Главная страница</a>
+                </li>
+                <li class="divider-vertical"></li>
+                <li><a href="{% url 'ask' %}">Вопросы</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Теги</a></li>
+                <li class="divider-vertical"></li>
+            </ul>
+            <ul class="nav pull-right">
+                <li>
+                    <form id="menu-search" class="form-search">
+                        <div class="input-append">
+                            <input type="text" class="span2 search-query">
+                            <button type="submit" class="btn btn-inverse">
+                                <i class="icon-search icon-white"></i>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+                <li class="divider-vertical"></li>
+                <li class="divider-vertical"></li>
+                <li>
+                    <div class="btn-group">
+                        <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                            <div id="avatar">
+                                <img class="media-object" src="default.jpg">
+                            </div>
+                            USERID
+                            <span id="caret-white" class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="icon-question-sign"></i>
+                                    Мои вопросы
+                                    <span class="label">#new</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon-wrench"></i>
+                                    Настройки
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon-off"></i>
+                                    Выйти
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main container">
+    <div class="row-fluid">
+        <div id="main_part" class="span8">
+            {% block main %} {% endblock %}
+        </div>
+        <div class="span3 offset1">
+            <div class="tags_authors">
+            <h4>Популярные теги:<br>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">Что-то странное</a>
+                </span>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">просто тег.</a>
+                </span>
+                 <span class="tag">
+                    <a class="btn btn-mini" href="#">Никто</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">не</a>
+                </span>
+                 <span>
+                    <a class="btn btn-mini" href="#">читает</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">теги.</a>
+                </span>
+            </h4>
+                </div>
+            <div class="tags_authors">
+            <h4>Популярные авторы:<br>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">Михаил Булгаков</a>
+                </span>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">Рэй Брэдбери</a>
+                </span>
+                 <span class="tag">
+                    <a class="btn btn-mini" href="#">Федор Достоевский</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">Batman666</a>
+                </span>
+                 <span>
+                    <a class="btn btn-mini" href="#">Стивен Кинг</a>
+                </span>
+            </h4>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
