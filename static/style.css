@@ -1,82 +1,99 @@
-.tags_authors{
-	padding: 5px;
-	width: 100%;
+.tags_authors {
+    padding: 5px;
+    width: 100%;
 }
-.tags_authors a{
-	margin: 4px;
+
+.tags_authors a {
+    margin: 4px;
 }
-.main{
-	padding-top: 41px;
+
+.main {
+    padding-top: 41px;
 }
-#caret-white{
-	color:white;
-	border-bottom-color: white;
-	border-top-color: white;
+
+#caret-white {
+    color: white;
+    border-bottom-color: white;
+    border-top-color: white;
 }
-#avatar{
-	width:20px;
-	float:left;
-	vertical-align: middle;
-	padding-right: 10px;
-	padding-top: 1px;
+
+#avatar {
+    width: 20px;
+    float: left;
+    vertical-align: middle;
+    padding-right: 10px;
+    padding-top: 1px;
 }
-#menu-search{
-	padding-top: 5px;
-	margin-bottom: 0px;
+
+#menu-search {
+    padding-top: 5px;
+    margin-bottom: 0px;
 }
-.question{
+
+.question {
     border: solid 1px lightgray;
     margin-top: 10px;
     float: left;
     width: 100%;
     height: 100%;
 }
-.question h5 a{
+
+.question h5 a {
     color: #999999;
     font-weight: bold;
     font-size: 14px;
     line-height: 20px;
     margin-top: 0;
 }
-.question_left{
+
+.question_left {
     float: left;
     width: 150px;
     padding-left: 5px;
     box-sizing: border-box;
-    margin-top:10px;
+    margin-top: 10px;
     height: 100%;
 }
-.question_left img{
-    //margin-left: 5px;
+
+.question_left img {
+/ / margin-left : 5 px;
 }
-.question_rate_outer{
+
+.question_rate_outer {
     width: 100%;
-  text-align: center;
+    text-align: center;
 }
-.question_rate_inner{
-  display: inline-block;
+
+.question_rate_inner {
+    display: inline-block;
 }
-.question_right{
+
+.question_right {
     padding: 10px;
     margin: 5px !important;
     box-sizing: border-box;
     border-left: solid 1px lightgray;
 }
-.question_tags{
+
+.question_tags {
     line-height: 2;
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
 }
-.question_right h3{
+
+.question_right h3 {
     margin-top: 0;
 }
-#main_part{
+
+#main_part {
     padding-left: 5px;
 }
-#questions{
+
+#questions {
     float: left;
     width: 100%;
 }
+
 /*.navbar-red .navbar-inner{
 	height: 41px;
 	background: red;

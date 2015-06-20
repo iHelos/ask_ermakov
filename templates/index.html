@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="question_right span9">
-                <h3><a>{{Question.title}}</a></h3>
+                <h3><a href="/question?id={{Question.id}}">{{Question.title}}</a></h3>
                 <p>
                     {{Question.text}}
 
@@ -65,7 +65,7 @@
                     <a class="btn btn-mini" href="#">теги.</a>
                 </span>
                 </p>
-                <a>Комментарии</a>
+                <a href="/question?id={{Question.id}}">Комментарии</a>
             </div>
         </div>
     {% endfor %}
