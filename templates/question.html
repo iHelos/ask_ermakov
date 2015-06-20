@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block main %}
+    <h2>Страница вопроса</h2>
+    <div class="question row-fluid">
+        <div class="question_left span3">
+            <img class="question_avatar" src="http://lorempixel.com/140/140"/>
+            Автор:
+            <a>
+                {{ Question.author.user.username }}
+            </a>
+
+            <div class="btn-toolbar question_rate_outer">
+                <div class="btn-group question_rate_inner">
+                    <a class="btn" href="#">-</a>
+                    <a class="btn" href="#">{{ Question.rating }}</a>
+                    <a class="btn" href="#">+</a>
+                </div>
+            </div>
+        </div>
+        <div class="question_right span9">
+            <h3><p>{{ Question.title }}</p></h3>
+            <p>
+                {{ Question.text }}
+
+            </p>
+
+            <p class="question_tags">
+                Тэги: <br>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">Что-то странное</a>
+                </span>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">просто тег.</a>
+                </span>
+                 <span class="tag">
+                    <a class="btn btn-mini" href="#">Никто</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">не</a>
+                </span>
+                 <span>
+                    <a class="btn btn-mini" href="#">читает</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">теги.</a>
+                </span>
+                     <span class="tag">
+                    <a class="btn btn-mini" href="#">Тег</a>
+                </span>
+                <span class="tag">
+                    <a class="btn btn-mini" href="#">.</a>
+                </span>
+                 <span class="tag">
+                    <a class="btn btn-mini" href="#">111о</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">:)</a>
+                </span>
+                 <span>
+                    <a class="btn btn-mini" href="#">18+</a>
+                </span>
+                <span>
+                    <a class="btn btn-mini" href="#">теги.</a>
+                </span>
+            </p>
+        </div>
+    </div>
+    <h2>Комментарии:</h2>
+    {% for answer in Answers %}
+        <div class="question row-fluid">
+            <div class="question_left span3">
+                <img class="question_avatar" src="http://lorempixel.com/30/30"/>
+                Автор:
+                <a>
+                    {{ answer.author.user.username }}
+                </a>
+
+                <div class="btn-toolbar question_rate_outer">
+                    <div class="btn-group question_rate_inner">
+                        <a class="btn" href="#">-</a>
+                        <a class="btn" href="#">{{ answer.rating }}</a>
+                        <a class="btn" href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="question_right span9">
+                <p>
+                    {{ answer.text}}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+        <form method="POST" action="">
+            {% csrf_token %}
+        <div class="row-fluid">
+            <div class="span10" style="margin-top: 10px">
+    	        <textarea style="resize: none; width: 100%;" name="{{ form.text.name }}" type="text"></textarea>
+            </div>
+            <div class="span1" style="margin-top: 10px">
+                <button type="submit" style="margin-left:5px; height: 50px" class="btn btn-primary">Ответить</button>
+            </div>
+            {% if form.text.errors %}
+                <div class="alert alert-error">
+                    {{ form.text.errors }}
+                </div>
+            {% endif %}
+            <br>
+            </div>
+        </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block main %}
+<h2>Profile of {{user.username}}</h2>	
+<br>
+<form  action="" method="post" enctype="multipart/form-data"> 
+{% csrf_token %}
+	{% for field in user_form %}
+	<div class="row">
+		<div class="span2">
+			<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+		</div>
+		<div class="span5">
+			<input id="{{ field.id_for_label }}" name="{{ field.name }}" type="text"			
+			value="{{ field.value|default_if_none:"" }}"/>			
+		</div>
+	</div>
+	{% if field.errors %}
+		<div class="row">
+			<div class="span2 offset2 alert alert-error"> 
+				{{field.errors}}
+			</div>
+		</div>		
+	{% endif %}
+
+	{% endfor %}
+	<div class="row">
+		<div class="span2">
+			<p>Рейтинг</p>
+		</div>
+		<div class="span5">
+				<label>{{user.profile.rating}}</label>				
+		</div>
+	</div>
+	<div class="row">
+		<div class="span2">
+			<p>Загрузить аватар</p>
+		</div>
+		<div class="span5">
+			<img class = "img" style = "margin-bottom: 15px" src="{{user.profile.avatar.url}}" heigth="100" width="100"/> 
+			<div> {{profile_form.avatar}} </div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+			<div class="span5 offset2">
+					<input type="hidden" name="next" value="{{ next }}"/>
+					<button type="submit" class="btn btn-info">Сохранить изменения</button>
+			</div>
+	</div>
+</form>
+{% endblock %}

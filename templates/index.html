@@ -4,30 +4,26 @@
         Популярные вопросы:
     </h1>
     <div id="questions">
+    {% for Question in question_page %}
         <div class="question row-fluid">
             <div class="question_left span3">
                 <img class="question_avatar" src="http://lorempixel.com/140/140"/>
                     Автор:
                 <a>
-                    Satan666
+                    {{ Question.author.user.username }}
                 </a>
                 <div class="btn-toolbar question_rate_outer">
                     <div class="btn-group question_rate_inner">
                         <a class="btn" href="#">-</a>
-                        <a class="btn" href="#">4</a>
+                        <a class="btn" href="#">{{ Question.rating }}</a>
                         <a class="btn" href="#">+</a>
                     </div>
                 </div>
             </div>
             <div class="question_right span9">
-                <h3><a>Где пирог?</a></h3>
+                <h3><a>{{Question.title}}</a></h3>
                 <p>
-                    Друзья,
-
-                    09 апреля 2015 года в МГТУ им. Н.Э. Баумана состоится лекция основателя и Генерального директора
-                    «Лаборатории Касперского» Евгения Касперского!
-                    Лекция пройдет в Малом Зале ДК с 15-45 ч. до 17-00ч.
-                    Презентация, с которой выступит Евгений, называется «The “Internet of Threats”».
+                    {{Question.text}}
 
                 </p>
                 <p class="question_tags">
@@ -72,142 +68,7 @@
                 <a>Комментарии</a>
             </div>
         </div>
-        <div class="question row-fluid">
-            <div class="question_left span3">
-                <img class="question_avatar" src="http://lorempixel.com/140/140"/>
-                    Автор:
-                <a>
-                    Satan666
-                </a>
-                <div class="btn-toolbar question_rate_outer">
-                    <div class="btn-group question_rate_inner">
-                        <a class="btn" href="#">-</a>
-                        <a class="btn" href="#">4</a>
-                        <a class="btn" href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="question_right span9">
-                <h3><a>Где пирог?</a></h3>
-                <p>
-                    Друзья,
-
-                    09 апреля 2015 года в МГТУ им. Н.Э. Баумана состоится лекция основателя и Генерального директора
-                    «Лаборатории Касперского» Евгения Касперского!
-                    Лекция пройдет в Малом Зале ДК с 15-45 ч. до 17-00ч.
-                    Презентация, с которой выступит Евгений, называется «The “Internet of Threats”».
-
-                </p>
-                <p class="question_tags">
-                    Тэги: <br>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">Что-то странное</a>
-                </span>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">просто тег.</a>
-                </span>
-                 <span class="tag">
-                    <a class="btn btn-mini" href="#">Никто</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">не</a>
-                </span>
-                 <span>
-                    <a class="btn btn-mini" href="#">читает</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">теги.</a>
-                </span>
-                     <span class="tag">
-                    <a class="btn btn-mini" href="#">Тег</a>
-                </span>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">.</a>
-                </span>
-                 <span class="tag">
-                    <a class="btn btn-mini" href="#">111о</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">:)</a>
-                </span>
-                 <span>
-                    <a class="btn btn-mini" href="#">18+</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">теги.</a>
-                </span>
-                </p>
-                <a>Комментарии</a>
-            </div>
-        </div>
-        <div class="question row-fluid">
-            <div class="question_left span3">
-                <img class="question_avatar" src="http://lorempixel.com/140/140"/>
-                    Автор:
-                <a>
-                    Satan666
-                </a>
-                <div class="btn-toolbar question_rate_outer">
-                    <div class="btn-group question_rate_inner">
-                        <a class="btn" href="#">-</a>
-                        <a class="btn" href="#">4</a>
-                        <a class="btn" href="#">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="question_right span9">
-                <h3><a>Где пирог?</a></h3>
-                <p>
-                    Друзья,
-
-                    09 апреля 2015 года в МГТУ им. Н.Э. Баумана состоится лекция основателя и Генерального директора
-                    «Лаборатории Касперского» Евгения Касперского!
-                    Лекция пройдет в Малом Зале ДК с 15-45 ч. до 17-00ч.
-                    Презентация, с которой выступит Евгений, называется «The “Internet of Threats”».
-
-                </p>
-                <p class="question_tags">
-                    Тэги: <br>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">Что-то странное</a>
-                </span>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">просто тег.</a>
-                </span>
-                 <span class="tag">
-                    <a class="btn btn-mini" href="#">Никто</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">не</a>
-                </span>
-                 <span>
-                    <a class="btn btn-mini" href="#">читает</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">теги.</a>
-                </span>
-                     <span class="tag">
-                    <a class="btn btn-mini" href="#">Тег</a>
-                </span>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">.</a>
-                </span>
-                 <span class="tag">
-                    <a class="btn btn-mini" href="#">111о</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">:)</a>
-                </span>
-                 <span>
-                    <a class="btn btn-mini" href="#">18+</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">теги.</a>
-                </span>
-                </p>
-                <a>Комментарии</a>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 {% endblock %}
 
