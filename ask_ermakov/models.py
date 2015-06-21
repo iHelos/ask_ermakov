@@ -6,12 +6,12 @@ from ask_ermakov import settings
 class Profile(models.Model):
     user = models.OneToOneField(User)
     rating = models.IntegerField(default=0)
-    avatar_url = models.CharField(max_length=60)
+    #avatar_url = models.CharField(max_length=60)
     avatar = models.ImageField(upload_to=settings.uploads, default='default.jpg')
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=25)
 
 
 class Question(models.Model):
@@ -34,11 +34,11 @@ class Answer(models.Model):
 
 class QuestionVote(models.Model):
     vote = models.IntegerField(default=0)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(Profile)
     question = models.ForeignKey(Question)
 
 
 class AnswerVote(models.Model):
     vote = models.IntegerField(default=0)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(Profile)
     answer = models.ForeignKey(Answer)

@@ -61,7 +61,7 @@ def register(request):
 @login_required(login_url='/login')
 def profile(request):
     user_obj = User.objects.get(id=request.user.id)
-    profile_obj = Profile.objects.get(user_id=user_obj.id)
+    profile_obj = Profile.objects.get(user=user_obj)
     if request.method == 'POST':
         profile_form = SettingsProfileForm(request.POST, request.FILES, instance=profile_obj)
         user_form = SettingsUserForm(request.POST, instance=user_obj)
