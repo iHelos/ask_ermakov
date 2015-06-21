@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # __DJANGO-user__
@@ -89,7 +89,10 @@ def ask(request):
 
 def question(request):
     id = request.GET.get('id')
-    cur_question = Question.objects.get(id=id)
+    try:
+        cur_question = Question.objects.get(id=id)
+    except Question.DoesNotExist:
+        raise Http404('no such question')
     answer_list = Answer.objects.filter(question_id=id)
     if request.method == 'POST':
         form = AnswerForm(request.POST, user=request.user, question=cur_question)
