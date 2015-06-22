@@ -3,7 +3,7 @@
     <h2>Страница вопроса</h2>
     <div class="question row-fluid">
         <div class="question_left span3">
-            <img class="question_avatar" src="http://lorempixel.com/140/140"/>
+            <img class="question_avatar" src="{{ Question.author.user.profile.avatar }}"/>
             Автор:
             <a>
                 {{ Question.author.user.username }}
@@ -69,7 +69,7 @@
     {% for answer in Answers %}
         <div class="question row-fluid">
             <div class="question_left span3">
-                <img class="question_avatar" src="http://lorempixel.com/30/30"/>
+                <img class="answer_avatar" src="{{ answer.author.user.profile.avatar }}"/>
                 Автор:
                 <a>
                     {{ answer.author.user.username }}

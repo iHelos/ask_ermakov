@@ -94,6 +94,14 @@
     width: 100%;
 }
 
+.question_avatar {
+    max-width: 140px;
+}
+
+.answer_avatar {
+    max-width: 30px;
+}
+
 /*.navbar-red .navbar-inner{
 	height: 41px;
 	background: red;

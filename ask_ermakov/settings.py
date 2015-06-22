@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -59,10 +60,10 @@ WSGI_APPLICATION = 'ask_ermakov.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.mysql',
-        'NAME':'ask_ermak_v2',
-        'USER':'ermak',
-        'PASSWORD':'psw'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ask_ermak_v2',
+        'USER': 'ermak',
+        'PASSWORD': 'psw'
     }
 }
 TEMPLATE_DIRS = {
@@ -87,4 +88,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-uploads = '/uploads'
+uploads = 'uploads/'

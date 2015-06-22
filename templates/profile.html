@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	{% if field.errors %}
-		<div class="row">
+		<div class="row-fluid">
 			<div class="span2 offset2 alert alert-error"> 
 				{{field.errors}}
 			</div>
@@ -23,7 +23,7 @@
 	{% endif %}
 
 	{% endfor %}
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span2">
 			<p>Рейтинг</p>
 		</div>
@@ -31,7 +31,7 @@
 				<label>{{user.profile.rating}}</label>				
 		</div>
 	</div>
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span2">
 			<p>Загрузить аватар</p>
 		</div>
@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	<br>
-	<div class="row">
+	<div class="row-fluid">
 			<div class="span5 offset2">
 					<input type="hidden" name="next" value="{{ next }}"/>
 					<button type="submit" class="btn btn-info">Сохранить изменения</button>

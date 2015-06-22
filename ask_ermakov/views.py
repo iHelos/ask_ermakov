@@ -34,9 +34,9 @@ def index(request):
     pagedQuestion = Paginator(question_list, 20)
     page = request.GET.get('page')
     try:
-		question_page = pagedQuestion.page(page)
+        question_page = pagedQuestion.page(page)
     except PageNotAnInteger:
-		question_page = pagedQuestion.page(1)
+        question_page = pagedQuestion.page(1)
     return render(request, 'index.html',
                   {'question_page': question_page, 'last_page_number': pagedQuestion.num_pages, 'sort': sort})
 

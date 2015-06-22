@@ -7,7 +7,7 @@
     {% for Question in question_page %}
         <div class="question row-fluid">
             <div class="question_left span3">
-                <img class="question_avatar" src="http://lorempixel.com/140/140"/>
+                <img class="question_avatar" src="{{ Question.author.avatar }}"/>
                     Автор:
                 <a>
                     {{ Question.author.user.username }}
