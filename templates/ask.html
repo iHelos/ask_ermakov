@@ -6,7 +6,7 @@
 <form method="POST" action="/ask">
 	{% csrf_token %}
 {% for field in form %}
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span2">
 			<label style="width: 100%" for="{{ field.id_for_label }}">{{ field.label }}</label>
 		</div>
@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	{% if field.errors %}
-		<div class="row">
+		<div class="row-fluid">
 			<div class="span2 offset2 alert alert-error"> 
 				{{field.errors}}
 			</div>
@@ -34,7 +34,7 @@
 	{% endif %}
 
 {% endfor %}
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span5 offset2">
 				<input type="hidden" name="next" value="{{ next }}"/>
 				<button type="submit" class="btn btn-info">Задать вопрос</button>

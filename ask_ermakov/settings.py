@@ -60,7 +60,7 @@ WSGI_APPLICATION = 'ask_ermakov.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'ask_ermak',
+        'NAME':'ask_ermak_v2',
         'USER':'ermak',
         'PASSWORD':'psw'
     }

@@ -93,6 +93,8 @@ def question(request):
         cur_question = Question.objects.get(id=id)
     except Question.DoesNotExist:
         raise Http404('no such question')
+    except:
+        raise Http404('bad request')
     answer_list = Answer.objects.filter(question_id=id)
     if request.method == 'POST':
         form = AnswerForm(request.POST, user=request.user, question=cur_question)

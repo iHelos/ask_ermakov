@@ -5,7 +5,7 @@
 <form  action="" method="post" enctype="multipart/form-data"> 
 {% csrf_token %}
 	{% for field in user_form %}
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span2">
 			<label for="{{ field.id_for_label }}">{{ field.label }}</label>
 		</div>

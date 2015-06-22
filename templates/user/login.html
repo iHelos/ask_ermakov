@@ -7,7 +7,7 @@
 <form  method="post" action="{% url 'django.contrib.auth.views.login' %}">
 	{% csrf_token %}
 	{% for field in form %}
-	<div class="row">		
+	<div class="row-fluid">
 			<div class="span2">
 				<label for="{{ field.id_for_label }}">{{field.label}}</label>
 			</div>
@@ -23,7 +23,7 @@
 	</div>
 	{% endfor %}	
 
-	<div class="row">
+	<div class="row-fluid">
 		<div class="form-group">
 			<div class="span5 offset2">
 				<button type="submit" class="btn btn-info">Войти</button>
@@ -34,7 +34,7 @@
 	
 	<br>
 	{% if form.errors %}
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span3 offset2">
 			<div class="alert alert-error">
 				<p>Неверно. Введите снова</p>
@@ -43,7 +43,7 @@
 	</div>
 	{% endif %}
 	<br>
-	<div class="row">
+	<div class="row-fluid">
 		<div class="span3 offset2">
 			<a href="/signup">Создать аккаунт</a>
 		</div>
