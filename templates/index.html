@@ -28,42 +28,11 @@
                 </p>
                 <p class="question_tags">
                     Тэги: <br>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">Что-то странное</a>
-                </span>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">просто тег.</a>
-                </span>
-                 <span class="tag">
-                    <a class="btn btn-mini" href="#">Никто</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">не</a>
-                </span>
-                 <span>
-                    <a class="btn btn-mini" href="#">читает</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">теги.</a>
-                </span>
-                     <span class="tag">
-                    <a class="btn btn-mini" href="#">Тег</a>
-                </span>
-                <span class="tag">
-                    <a class="btn btn-mini" href="#">.</a>
-                </span>
-                 <span class="tag">
-                    <a class="btn btn-mini" href="#">111о</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">:)</a>
-                </span>
-                 <span>
-                    <a class="btn btn-mini" href="#">18+</a>
-                </span>
-                <span>
-                    <a class="btn btn-mini" href="#">теги.</a>
-                </span>
+                    {% for tag in Question.tag_set.all %}
+                        <span class="tag">
+                            <a class="btn btn-mini" href="#">Что-то странное</a>
+                        </span>
+                    {% endfor %}
                 </p>
                 <a href="/question?id={{Question.id}}">Комментарии</a>
             </div>

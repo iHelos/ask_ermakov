@@ -73,7 +73,7 @@ def profile(request):
     user_form = SettingsUserForm(instance=user_obj)
     return render(request, 'profile.html', {'profile_form': profile_form, 'user_form': user_form})
 
-
+@login_required(login_url='/login')
 def ask(request):
     if request.method == 'POST':
         form = QuestionForm(request.POST, user=request.user)
